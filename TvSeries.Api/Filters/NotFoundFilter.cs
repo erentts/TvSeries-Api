@@ -20,8 +20,8 @@ namespace TvSeries.Api.Filters
         public async override Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
             int id = (int) context.ActionArguments.Values.FirstOrDefault();
-            var product = await _actorService.GetByIdAsync(id);
-            if (product != null)
+            var actor = await _actorService.GetByIdAsync(id);
+            if (actor != null)
             {
                 await next();
             }
